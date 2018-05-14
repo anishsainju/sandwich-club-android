@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/sandwich_picture_content_description"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageView
+                android:id="@+id/divider"
+                android:background="@color/colorPrimary"
+                android:layout_height="1dp"
+                android:layout_width="0dp"
+                app:layout_constraintLeft_toRightOf="parent"
+                app:layout_constraintRight_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage"
+                app:layout_constraintHorizontal_bias="0.0"/>
+
+            <TextView
+                android:id="@+id/tvAlsoKnownAsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_also_known_as_label"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tvAlsoKnownAs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage"
+                app:layout_constraintLeft_toRightOf="@+id/tvAlsoKnownAsLabel"
+                tools:text="AlsoKnownAsNames"
+                />
+
+            <TextView
+                android:id="@+id/tvDescriptionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/detail_description_label"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAlsoKnownAs"
+                />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                app:layout_constraintLeft_toLeftOf="@+id/tvDescriptionLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="TextViewForDescription"
+                android:justificationMode="inter_word"
+                />
+
+            <TextView
+                android:id="@+id/tvIngredientsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_ingredients_label"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                app:layout_constraintLeft_toLeftOf="@+id/tvDescription"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:id="@+id/tvIngredients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                app:layout_constraintLeft_toLeftOf="@+id/tvIngredientsLabel"
+                app:layout_constraintRight_toLeftOf="@+id/tvOriginLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvIngredientsLabel"
+                tools:text="Ingredients lists"
+                />
+
+
+            <TextView
+                android:id="@+id/tvOriginLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="52dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_place_of_origin_label"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintEnd_toEndOf="@+id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tvOrigin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/tvOriginLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvOriginLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="8dp"
+                tools:text="Nepal"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</layout>
