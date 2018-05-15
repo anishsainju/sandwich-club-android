@@ -11,26 +11,33 @@ import java.util.List;
 
 public class JsonUtils {
 
+    public static final String NAME = "name";
+    public static final String MAINNAME = "mainName";
+    public static final String ALSOKNOWNAS = "alsoKnownAs";
+    public static final String PLACEOFORIGIN = "placeOfOrigin";
+    public static final String DESCRIPTION = "description";
+    public static final String IMAGE = "image";
+    public static final String INGREDIENTS = "ingredients";
+
     public static Sandwich parseSandwichJson(String json) throws JSONException {
 
         JSONObject sandwichDetails = new JSONObject(json);
 
-        JSONObject name = sandwichDetails.getJSONObject("name");
-        String mainName = name.getString("mainName");
-        JSONArray alsoKnownAs = name.getJSONArray("alsoKnownAs");
+        JSONObject name = sandwichDetails.getJSONObject(NAME);
+        String mainName = name.getString(MAINNAME);
+        JSONArray alsoKnownAs = name.getJSONArray(ALSOKNOWNAS);
         List<String> alsoKnownAsList = new ArrayList<>();
         for (int i=0; i<alsoKnownAs.length(); i++) {
             alsoKnownAsList.add(alsoKnownAs.getString(i));
         }
 
-        String placeOfOrigin = sandwichDetails.getString("placeOfOrigin");
+        String placeOfOrigin = sandwichDetails.getString(PLACEOFORIGIN);
 
-        String description = sandwichDetails.getString("description");
+        String description = sandwichDetails.getString(DESCRIPTION);
 
-        String image = sandwichDetails.getString("image");
+        String image = sandwichDetails.getString(IMAGE);
 
-        JSONArray ingredients = sandwichDetails.getJSONArray("ingredients");
-        String[] ingredientsStringArray = new String[ingredients.length()];
+        JSONArray ingredients = sandwichDetails.getJSONArray(INGREDIENTS);
         List<String> ingredientsList = new ArrayList<>();
         for (int i=0; i<ingredients.length(); i++) {
             ingredientsList.add(ingredients.getString(i));
