@@ -24,10 +24,13 @@ public class JsonUtils {
         JSONObject sandwichDetails = new JSONObject(json);
 
         JSONObject name = sandwichDetails.getJSONObject(NAME);
+
         String mainName = name.getString(MAINNAME);
+
+        // Note that ALSOKNOWNAS is a list, so we take that list into JSONArray and go .getString(i)
         JSONArray alsoKnownAs = name.getJSONArray(ALSOKNOWNAS);
         List<String> alsoKnownAsList = new ArrayList<>();
-        for (int i=0; i<alsoKnownAs.length(); i++) {
+        for (int i = 0; i < alsoKnownAs.length(); i++) {
             alsoKnownAsList.add(alsoKnownAs.getString(i));
         }
 
@@ -37,14 +40,15 @@ public class JsonUtils {
 
         String image = sandwichDetails.getString(IMAGE);
 
+        // Note that the INGREDIENTS is a list, so we take that into JSONArray and do .getString(i)
         JSONArray ingredients = sandwichDetails.getJSONArray(INGREDIENTS);
         List<String> ingredientsList = new ArrayList<>();
-        for (int i=0; i<ingredients.length(); i++) {
+        for (int i = 0; i < ingredients.length(); i++) {
             ingredientsList.add(ingredients.getString(i));
         }
 
         // Create a new Sandwich object to fill details and return at the end
-        Sandwich sandwich =  new Sandwich(
+        Sandwich sandwich = new Sandwich(
                 mainName,
                 alsoKnownAsList,
                 placeOfOrigin,
@@ -53,6 +57,5 @@ public class JsonUtils {
                 ingredientsList);
 
         return sandwich;
-
     }
 }
