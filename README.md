@@ -1,4 +1,5 @@
-# Sandwich Club Project Starter Code
+# Sandwich Club Project
+A course project I did for my Grow with Google Android Developer Nanodegree Program at Udacity. I received the scholarship from Google on January, 2018 (Phase I) and April, 2018 (Phase II).
 
 ## Project Overview
 In this project, you will complete the **Sandwich Club** app to
@@ -19,8 +20,6 @@ Through this project, you will:
 - Populate all fields in the layout accordingly
 
 ## How Do I Complete this Project?
-Download the [Sandwich Club app starter code.](https://github.com/udacity/sandwich-club-starter-code)
-
 Design the layout for the detail activity so the different elements
 display in a sensible way. Implement the JSON parsing in JsonUtils so it
 produces a Sandwich Object that can be used to populate the UI that you designed.
